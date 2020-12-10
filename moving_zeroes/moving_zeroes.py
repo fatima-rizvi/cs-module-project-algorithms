@@ -31,20 +31,20 @@ def moving_zeroes(arr):
                 right -= 1  # Increment the right pointer down by one
     return arr  # Return the array, all of the zeroes should now be on the right
 
-    # Harry's solutions (2):
-    # O(n) space and O(n) time, non-destructive
-    # def moving_zeros_o_n(array):
-    #     new_array = []
-    #     for number in array:
-    #         if number != 0:
-    #             new_array.append(number)
-    #     return new_array + [0] * (len(array) - len(new_array))
-    # # O(n) space O(n) time using a list comprehension, non-destructive
-    # def moving_zeros_o_n_comprehension(array):
-    #     new_array = [x for x in array if x != 0]
-    #     return new_array + [0] * (len(array) - len(new_array))
+# Harry's solutions (2):
+# O(n) space and O(n) time, non-destructive
+# def moving_zeroes(array):
+#     new_array = []
+#     for number in array:
+#         if number != 0:
+#             new_array.append(number)
+#     return new_array + [0] * (len(array) - len(new_array))
+# O(n) space O(n) time using a list comprehension, non-destructive
+# def moving_zeroes(array):    
+#     new_array = [x for x in array if x != 0]
+#     return new_array + ([0] * (len(array) - len(new_array))) # Extra parenthesis for clarity
 
-    # THE SOLUTION BELOW DIDN'T WORK
+    # THE SOLUTION BELOW DIDN'T WORK (The one in the video)
     # left_index = 0
     # right_index = len(arr) - 1
 
