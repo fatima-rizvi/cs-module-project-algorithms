@@ -3,16 +3,22 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def moving_zeroes(arr):
+
+     #Goal: move all zeroes to the right
+
     # Pseudo code, algorithm
     # Make a left & right pointer
     # Iterate through arr
         # Continue while left <= right
-    # if num at pointer is not 0, move it to the front of array
-        # Pop and push it
-        # But a better solution would be to swap it
-    # If num is a 0, leave it in place
-        # Decrement right pointer if it's a zero
-    # Increment left pointer in both if's
+    # if num at left pointer is 0 and the num at right pointer is not
+        # Swap them
+        # Increment left pointer by 1
+        # Decrement right pointer by 1
+    # Else
+        # If the number at the left pointer isn't 0
+            # Move the left pointer up
+        # If the number at the right pointer is zero
+            # Move the right pointer down
     # Return arr
 
     # Doc's solution
@@ -33,6 +39,7 @@ def moving_zeroes(arr):
 
 # Harry's solutions (2):
 # O(n) space and O(n) time, non-destructive
+# arr = [0, 3, 1, 0, -2]
 # def moving_zeroes(array):
 #     new_array = []
 #     for number in array:
@@ -45,6 +52,19 @@ def moving_zeroes(arr):
 #     return new_array + ([0] * (len(array) - len(new_array))) # Extra parenthesis for clarity
 
     # THE SOLUTION BELOW DIDN'T WORK (The one in the video)
+
+    # Pseudo code, algorithm
+    # Make a left & right pointer
+    # Iterate through arr
+        # Continue while left <= right
+    # if num at pointer is not 0, move it to the front of array
+        # Pop and push it
+        # But a better solution would be to swap it
+    # If num is a 0, leave it in place
+        # Decrement right pointer if it's a zero
+    # Increment left pointer in both if's
+    # Return arr
+
     # left_index = 0
     # right_index = len(arr) - 1
 

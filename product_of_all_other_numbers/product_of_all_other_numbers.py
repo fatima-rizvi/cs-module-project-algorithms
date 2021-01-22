@@ -3,9 +3,35 @@ Input: a List of integers
 Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
-    # Your code here
+    # algo
+    # Create a pointer to keep track of our current index
+    # Create an array to hold the products
+    # Create a product variable to temporarily hold each product. Initialize to 1.
+    # Iterate through the array
+        # Iterate through the array again
+            # If the item is at our current index
+                # pass
+            # Else
+                # Multiple our product variable by the current number
+        # Append the product to the products array
+        # Increment the current index
+        # Reset product to one
 
-    pass
+    current_i = 0
+    all_products = []
+    product = 1
+
+    for num in arr:
+        for i in range(len(arr)):
+            if current_i == i:
+                pass
+            else:
+                product *= arr[i]
+        all_products.append(product)
+        current_i += 1
+        product = 1
+    
+    return all_products
 
 
 if __name__ == '__main__':
