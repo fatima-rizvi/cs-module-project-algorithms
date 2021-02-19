@@ -5,6 +5,7 @@ Returns: an integer
 # Requirement: O(1) space complexity
 
 def single_number(arr):
+    # First pass
     # # Create a counter variable dictionary
     # # Count frequency of numbers 
     # # Search through the counter to find the frequency of 1
@@ -22,20 +23,47 @@ def single_number(arr):
     #     if count == 1:
     #         return num
 
+    #Optimized (Me)
+    frequency = {}
+    for num in arr:
+        # If num is already in counter, increment count by one
+        if frequency[num]:
+            frequency[num] += 1
+        # If num is not in the counter dictionary yet, then make it's value 1
+        else:
+            frequency[num] = 1
+    
+    for num, count in frequency.items():
+        if count == 1:
+            return num
+
     # Optimized (Doc)
     # answer = 0
     # for x in arr:
-    #     answer ^= x
+    #     answer ^= x   #bitwise operator
+    #     print(answer)
     # return answer
 
     # Joanne's Optimized
-    count = {}
-    for num in arr:
-        if count.get(num):
-            del count[num]
-        else:
-            count[num] = 1
-    return next(iter(count.keys()))
+    # count = {}
+    # for num in arr:
+    #     if count.get(num):
+    #         del count[num]
+    #     else:
+    #         count[num] = 1
+    # return next(iter(count.keys()))
+
+    #Ava's Optimized
+    # freq = {}
+    
+    # for num in arr:
+    #     if freq.get(num):
+    #         # freq[num] += 1
+    #         del freq[num]   # this is faster, if it's in the dictionary it's obvs in there more than once
+    #     else:
+    #         freq[num] = 1
+    
+    # return next(iter(freq.keys())) #O(n)
 
     #Alt
     # Sort Array in place
