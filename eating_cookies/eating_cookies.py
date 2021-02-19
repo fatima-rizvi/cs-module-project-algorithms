@@ -4,10 +4,14 @@ Returns: an integer
 '''
 def eating_cookies(n):
     if n < 0:
+        print(f"{n}: 0")
         return 0
     elif n == 0:
+        print(f"{n}: 1")
         return 1
     else:
+
+        print(f"Recurse {n}")
         return eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
     # algorithm
     # If there or 0 or 1 cookies
