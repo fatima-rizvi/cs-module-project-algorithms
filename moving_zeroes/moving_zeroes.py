@@ -23,19 +23,19 @@ def moving_zeroes(arr):
 
     # Doc's solution
     # def moving_zeroes(arr):
-    left = 0    # Left pointer points at the start
-    right = len(arr) - 1    # Right pointer at the the end
-    while left <= right:    # While the pointers haven't crossed each other
-        if arr[left] == 0 and arr[right] != 0:  # If the left num is 0 and right num is not 0
-            arr[left], arr[right] = arr[right], arr[left] # Swap them (Unpacking/destructuring)
-            left += 1   # Increment the left pointer up by one
-            right -= 1  # Decrement the right pointer down by one
-        else:   # If the condition on line 23 isn't met 
-            if arr[left] != 0:  # If the left num is NOT zero
-                left += 1   # Increment the left pointer up by one
-            if arr[right] == 0: # If the right num is NOT zero
-                right -= 1  # Increment the right pointer down by one
-    return arr  # Return the array, all of the zeroes should now be on the right
+    # left = 0    # Left pointer points at the start
+    # right = len(arr) - 1    # Right pointer at the the end
+    # while left <= right:    # While the pointers haven't crossed each other
+    #     if arr[left] == 0 and arr[right] != 0:  # If the left num is 0 and right num is not 0
+    #         arr[left], arr[right] = arr[right], arr[left] # Swap them (Unpacking/destructuring)
+    #         left += 1   # Increment the left pointer up by one
+    #         right -= 1  # Decrement the right pointer down by one
+    #     else:   # If the condition on line 23 isn't met 
+    #         if arr[left] != 0:  # If the left num is NOT zero
+    #             left += 1   # Increment the left pointer up by one
+    #         if arr[right] == 0: # If the right num is NOT zero
+    #             right -= 1  # Increment the right pointer down by one
+    # return arr  # Return the array, all of the zeroes should now be on the right
 
 # Harry's solutions (2):
 # O(n) space and O(n) time, non-destructive
@@ -88,6 +88,16 @@ def moving_zeroes(arr):
     #     if arr[right_index] != 0:
     #         arr[right_index], arr[0] = arr[0], arr[right_index]
 
+    #Optimized:
+    bucket = [0 for num in arr]
+    counter = 0
+
+    for num in arr:
+        if num != 0:
+            bucket[counter] = num
+            counter += 1
+
+    return bucket
 
 
 if __name__ == '__main__':
