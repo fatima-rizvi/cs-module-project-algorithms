@@ -3,23 +3,23 @@ Input: a List of integers as well as an integer `k` representing the size of the
 Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
-    # max_list = []
+    max_list = []
 
-    # i = 0
-    # while k <= len(nums):
-    #     window = nums[i:k]
-    #     max_list.append(max(window))
-    #     i += 1
-    #     k += 1
+    i = 0
+    while k <= len(nums):
+        window = nums[i:k]
+        max_list.append(max(window))
+        i += 1
+        k += 1
     
-    # return max_list
+    return max_list
 
     # Optimized hints
     # Use Dequeue on this (import from collections)
     # Create an empty list for max()
-    maxes = []
-    dq = deque()
-    # while loop inside a for loop
+    # maxes = []
+    # dq = deque()
+    # # while loop inside a for loop
     # Pop in the while loop
     # Need to invoke: pop(), append(), and pop_left()
     # Instead of useing range(), use enumerate()

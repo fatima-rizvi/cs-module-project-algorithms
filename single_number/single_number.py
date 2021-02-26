@@ -23,7 +23,7 @@ def single_number(arr):
     #     if count == 1:
     #         return num
 
-    #Optimized (Me)
+    #Optimized 
     frequency = {}
     for num in arr:
         # If num is already in counter, increment count by one
